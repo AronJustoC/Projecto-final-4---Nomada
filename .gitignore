@@ -1,0 +1,40 @@
+# Compilados y Binarios
+*.o
+*.obj
+*.exe
+*.out
+*.app
+
+# Directorios de compilación
+build/
+bin/
+obj/
+out/
+
+# IDEs y Editores
+.vscode/
+.vs/
+*.sln
+*.vcxproj
+*.user
+*.suo
+*.filters
+.idea/
+*.swp
+*.swo
+
+# Archivos de depuración y logs
+*.log
+*.dSYM/
+*.pdb
+*.ilk
+
+# Archivos de datos (Persistencia de inventario)
+# Se ignoran para evitar subir datos de prueba al repo
+inventory.dat
+inventario.txt
+*.bin
+
+# Sistema Operativo
+.DS_Store
+Thumbs.db
