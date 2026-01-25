@@ -61,41 +61,12 @@ void agregarProducto(Producto *&inventario, int &cantidad, int &capacidad) {
     cin >> inventario[cantidad].detalle.voltaje;
     break;
   case ROPA:
-    cout << "Talla (S, M, L, XL, etc.): ";
-    cin >> inventario[cantidad].detalle.talla;
-    break;
-  default:
-    break;
+    cout << "Talla (en centímetros): ";
   }
 
   cantidad++;
 }
-
-void listarProductos(Producto *inventario, int cantidad) {
-  if (cantidad == 0) {
-    cout << "\nEl inventario está vacío." << endl;
-    return;
-  }
-
-  cout << "\n--- LISTA DE PRODUCTOS ---" << endl;
-  for (int i = 0; i < cantidad; i++) {
-    cout << "Código: " << inventario[i].codigo << " | "
-         << "Nombre: " << inventario[i].nombre << " | "
-         << "Precio: $" << inventario[i].precio << " | ";
-
-    switch (inventario[i].tipo) {
-    case ALIMENTO:
-      cout << "Tipo: Alimento | Vence: " << inventario[i].detalle.fechaVencimiento;
-      break;
-    case ELECTRONICO:
-      cout << "Tipo: Electrónico | Voltaje: " << inventario[i].detalle.voltaje << "V";
-      break;
-    case ROPA:
-      cout << "Tipo: Ropa | Talla: " << inventario[i].detalle.talla;
-      break;
-    }
-    cout << endl;
-  }
+void listarProductos() { // TODO: Implementar lógica de listar
 }
 
 void guardarInventario() {
@@ -134,7 +105,7 @@ int main() {
       agregarProducto(inventario, cantidad, capacidad);
       break;
     case 2:
-      listarProductos(inventario, cantidad);
+      listarProductos();
       break;
     case 3:
       guardarInventario();
@@ -150,8 +121,6 @@ int main() {
       break;
     }
   } while (opcion != 0);
-
-  delete[] inventario;
 
   return 0;
 }
